@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colección Mundialista Panini</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colección Mundialista Panini</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
 <div class="sidebar">
 
-    <div class="logo">
-        🏆
-        <h2>Mundiales</h2>
-    </div>
+<div class="logo">
+🏆⚽🌎
+<h2>Mundiales</h2>
+</div>
 
-    <nav>
+<nav>
 
-        <button class="menu-btn" data-section="inicio">Inicio</button>
+<button class="menu-btn" data-section="inicio">🏠 Inicio</button>
 
-        <button class="menu-btn" data-section="m1970">🇲🇽 1970</button>
-        <button class="menu-btn" data-section="m1974">🇩🇪 1974</button>
-        <button class="menu-btn" data-section="m1978">🇦🇷 1978</button>
-        <button class="menu-btn" data-section="m1982">🇪🇸 1982</button>
-        <button class="menu-btn" data-section="m1986">🇲🇽 1986</button>
-        <button class="menu-btn" data-section="m1990">🇮🇹 1990</button>
-        <button class="menu-btn" data-section="m1994">🇺🇸 1994</button>
-        <button class="menu-btn" data-section="m1998">🇫🇷 1998</button>
-        <button class="menu-btn" data-section="m2002">🇰🇷🇯🇵 2002</button>
-        <button class="menu-btn" data-section="m2006">🇩🇪 2006</button>
-        <button class="menu-btn" data-section="m2010">🇿🇦 2010</button>
-        <button class="menu-btn" data-section="m2014">🇧🇷 2014</button>
-        <button class="menu-btn" data-section="m2018">🇷🇺 2018</button>
-        <button class="menu-btn" data-section="m2022">🇶🇦 2022</button>
-        <button class="menu-btn" data-section="m2026">🌎 2026</button>
+<button class="menu-btn" data-section="m1970">🇲🇽 1970</button>
+<button class="menu-btn" data-section="m1974">🇩🇪 1974</button>
+<button class="menu-btn" data-section="m1978">🇦🇷 1978</button>
+<button class="menu-btn" data-section="m1982">🇪🇸 1982</button>
+<button class="menu-btn" data-section="m1986">🇲🇽 1986</button>
+<button class="menu-btn" data-section="m1990">🇮🇹 1990</button>
+<button class="menu-btn" data-section="m1994">🇺🇸 1994</button>
+<button class="menu-btn" data-section="m1998">🇫🇷 1998</button>
+<button class="menu-btn" data-section="m2006">🇩🇪 2006</button>
+<button class="menu-btn" data-section="m2010">🇿🇦 2010</button>
+<button class="menu-btn" data-section="m2014">🇧🇷 2014</button>
+<button class="menu-btn" data-section="m2018">🇷🇺 2018</button>
+<button class="menu-btn" data-section="m2022">🇶🇦 2022</button>
+<button class="menu-btn" data-section="m2026">🌎 2026</button>
 
-        <button class="menu-btn" data-section="roadto">
-            🛣 Road To
-        </button>
+<button class="menu-btn" data-section="roadto">🛣 Road To</button>
+<button class="menu-btn" data-section="estadisticas">📊 Estadísticas</button>
 
-        <button class="menu-btn" data-section="estadisticas">
-            📊 Estadísticas
-        </button>
-
-    </nav>
+</nav>
 
 </div>
 
@@ -52,87 +47,258 @@
 
 <section id="inicio" class="page active">
 
-    <h1>🏆 Colección Mundialista Panini</h1>
+<div class="hero">
 
-    <div class="dashboard">
+<h1>🏆 Colección Mundialista Panini</h1>
 
-        <div class="stat-card">
-            <h3>Sobres conseguidos</h3>
-            <p id="globalCount">0</p>
-        </div>
+<p>
+Sobres oficiales, variantes y ediciones especiales
+de los Mundiales de Fútbol.
+</p>
 
-        <div class="stat-card">
-            <h3>Porcentaje</h3>
-            <p id="globalPercent">0%</p>
-        </div>
+</div>
 
-    </div>
+<div class="dashboard">
 
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-    </div>
+<div class="stat-card">
+<h3>🏆 Conseguidos</h3>
+<p id="globalCount">0</p>
+</div>
+
+<div class="stat-card">
+<h3>📊 Completado</h3>
+<p id="globalPercent">0%</p>
+</div>
+
+<div class="stat-card">
+<h3>❌ Faltantes</h3>
+<p id="missingCount">0</p>
+</div>
+
+</div>
+
+<div class="progress-container">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<br>
+
+<input
+type="text"
+id="searchInput"
+class="search-box"
+placeholder="🔍 Buscar sobre...">
 
 </section>
 
 <section id="m1970" class="page">
-<h1>México 1970</h1>
+
+<h1>🇲🇽 México 1970</h1>
 
 <div class="card-grid">
 
 <div class="packet-card">
-<img src="images/mexico70.jpg" alt="">
+
+<img src="images/mexico70.jpg">
+
 <h3>México 70</h3>
+
+<span class="rarity legendary">
+⭐ Histórico
+</span>
+
 <label>
 <input type="checkbox" class="packet">
 ✓ Lo tengo
 </label>
+
 </div>
 
 </div>
+
 </section>
 
 <section id="m1974" class="page">
-<h1>Alemania 1974</h1>
+
+<h1>🇩🇪 Alemania 1974</h1>
 
 <div class="card-grid">
 
 <div class="packet-card">
-<img src="images/munich74.jpg" alt="">
+
+<img src="images/munich74.jpg">
+
 <h3>Munich 74</h3>
+
+<span class="rarity legendary">
+⭐ Histórico
+</span>
+
 <label>
 <input type="checkbox" class="packet">
 ✓ Lo tengo
 </label>
+
 </div>
 
 </div>
+
 </section>
 
 <section id="m1978" class="page">
-<h1>Argentina 1978</h1>
+
+<h1>🇦🇷 Argentina 1978</h1>
 
 <div class="card-grid">
 
 <div class="packet-card">
-<img src="images/argentina78.jpg" alt="">
+
+<img src="images/argentina78.jpg">
+
 <h3>Argentina 78</h3>
+
+<span class="rarity legendary">
+⭐ Histórico
+</span>
+
 <label>
 <input type="checkbox" class="packet">
 ✓ Lo tengo
 </label>
+
 </div>
 
 </div>
+
 </section>
 
 <section id="m1982" class="page">
-<h1>España 1982</h1>
+
+<h1>🇪🇸 España 1982</h1>
 
 <div class="card-grid">
 
 <div class="packet-card">
-<img src="images/espana82.jpg" alt="">
+
+<img src="images/espana82.jpg">
+
 <h3>España 82</h3>
+
+<span class="rarity legendary">
+⭐ Histórico
+</span>
+
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="m1986" class="page">
+
+<h1>🇲🇽 México 1986</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+
+<img src="images/mexico86.jpg">
+
+<h3>México 86</h3>
+
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="m1990" class="page">
+
+<h1>🇮🇹 Italia 1990</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+
+<img src="images/italia90.jpg">
+
+<h3>Italia 90</h3>
+
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="m1994" class="page">
+
+<h1>🇺🇸 USA 1994</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+
+<img src="images/usa94.jpg">
+
+<h3>USA 94</h3>
+
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="m1998" class="page">
+
+<h1>🇫🇷 France 1998</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+
+<img src="images/france98.jpg">
+
+<h3>France 98</h3>
+
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
+</label>
+
+</div>
+
+</div>
+
+</section>
+<section id="m2006" class="page">
+
+<h1>🇩🇪 Germany 2006</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+<img src="images/germany2006.jpg">
+<h3>Germany 2006</h3>
 <label>
 <input type="checkbox" class="packet">
 ✓ Lo tengo
@@ -140,41 +306,44 @@
 </div>
 
 </div>
+
 </section>
 
-<section id="m1986" class="page"><h1>México 1986</h1></section>
-<section id="m1990" class="page"><h1>Italia 1990</h1></section>
-<section id="m1994" class="page"><h1>USA 1994</h1></section>
-<section id="m1998" class="page"><h1>France 1998</h1></section>
-<section id="m2002" class="page"><h1>Korea / Japan 2002</h1></section>
-<section id="m2006" class="page"><h1>Germany 2006</h1></section>
-
 <section id="m2010" class="page">
-<h1>South Africa 2010</h1>
+
+<h1>🇿🇦 South Africa 2010</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+<img src="images/southafrica2010.jpg">
+<h3>South Africa 2010</h3>
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
+</label>
+</div>
+
+</div>
+
 </section>
 
 <section id="m2014" class="page">
 
-<h1>Brazil 2014</h1>
+<h1>🇧🇷 Brazil 2014</h1>
 
 <div class="card-grid">
 
 <div class="packet-card">
 <img src="images/brazil2014.jpg">
 <h3>Internacional</h3>
-<label>
-<input type="checkbox" class="packet">
-✓ Lo tengo
-</label>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
 </div>
 
 <div class="packet-card">
 <img src="images/brazil2014usa.jpg">
 <h3>USA Edition</h3>
-<label>
-<input type="checkbox" class="packet">
-✓ Lo tengo
-</label>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
 </div>
 
 </div>
@@ -182,36 +351,159 @@
 </section>
 
 <section id="m2018" class="page">
-<h1>Russia 2018</h1>
-</section>
 
-<section id="m2022" class="page">
-<h1>Qatar 2022</h1>
-</section>
-
-<section id="m2026" class="page">
-<h1>World Cup 2026</h1>
-</section>
-
-<section id="roadto" class="page">
-
-<h1>Road To World Cup</h1>
+<h1>🇷🇺 Russia 2018</h1>
 
 <div class="card-grid">
 
 <div class="packet-card">
+<img src="images/russia2018.jpg">
+<h3>Internacional</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/russia2018usa.jpg">
+<h3>USA Edition</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/russia2018promo.jpg">
+<h3>Promotional</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/russia2018multipack.jpg">
+<h3>Multipack</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+</div>
+
+</section>
+
+<section id="m2022" class="page">
+
+<h1>🇶🇦 Qatar 2022</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+<img src="images/qatar2022.jpg">
+<h3>Internacional</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/qatar2022usa.jpg">
+<h3>USA Edition</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/qatar2022cocacola.jpg">
+<h3>Coca-Cola</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/qatar2022starter.jpg">
+<h3>Starter Pack</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/qatar2022multipack.jpg">
+<h3>Multipack</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+</div>
+
+</section>
+
+<section id="m2026" class="page">
+
+<h1>🌎 World Cup 2026</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+<img src="images/wc2026white.jpg">
+<h3>White Edition</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/wc2026amazon.jpg">
+<h3>Amazon Edition</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/wc2026costco.jpg">
+<h3>Costco Edition</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/wc2026starter.jpg">
+<h3>Starter Pack</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/wc2026collector.jpg">
+<h3>Collector Box</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/wc2026multipack.jpg">
+<h3>Multipack</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/wc2026retail.jpg">
+<h3>Retail Edition</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/wc2026promo.jpg">
+<h3>Promotional</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+</div>
+
+</section>
+
+<section id="roadto" class="page">
+
+<h1>🛣 Road To World Cup</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+<img src="images/roadto2014.jpg">
 <h3>Road To 2014</h3>
-<input type="checkbox" class="packet">
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
 </div>
 
 <div class="packet-card">
+<img src="images/roadto2018.jpg">
 <h3>Road To 2018</h3>
-<input type="checkbox" class="packet">
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
 </div>
 
 <div class="packet-card">
+<img src="images/roadto2022.jpg">
 <h3>Road To 2022</h3>
-<input type="checkbox" class="packet">
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
 </div>
 
 </div>
