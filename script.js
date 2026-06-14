@@ -1,11 +1,30 @@
+// NAVEGACIÓN
 const buttons = document.querySelectorAll(".menu-btn");
 const pages = document.querySelectorAll(".page");
-const packets = document.querySelectorAll(".packet");
 
 buttons.forEach(btn => {
     btn.addEventListener("click", () => {
-        pages.forEach(p => p.classList.remove("active"));
-        document.getElementById(btn.dataset.section).classList.add("active");
+        const target = btn.dataset.section;
+
+        pages.forEach(page => page.classList.remove("active"));
+
+        const el = document.getElementById(target);
+        if (el) el.classList.add("active");
+    });
+});
+
+// CHECKBOXES + LOCALSTORAGE
+const packets = document.querySelectorAll(".packet");
+
+packets.forEach((packet, index) => {
+    const saved = localStorage.getItem("packet_" + index);
+
+    if (saved === "true") packet.checked = true;
+
+    packet.addEventListener("change", () => {
+        localStorage.setItem("packet_" + index, packet.checked);
+        updateStats();
+        calculateWorldCupProgress();
     });
 });
 
@@ -19,31 +38,59 @@ function updateStats() {
     });
 
     const percent = total ? Math.round((owned / total) * 100) : 0;
+    const missing = total - owned;
 
-    document.getElementById("globalCount").textContent = owned;
-    document.getElementById("globalPercent").textContent = percent + "%";
-    document.getElementById("missingCount").textContent = total - owned;
+    const globalCount = document.getElementById("globalCount");
+    const globalPercent = document.getElementById("globalPercent");
+    const missingCount = document.getElementById("missingCount");
+    const progressBar = document.getElementById("progressBar");
 
-    document.getElementById("statsTotal").textContent = owned;
-    document.getElementById("statsPercent").textContent = percent + "%";
+    if (globalCount) globalCount.textContent = `${owned} / ${total}`;
+    if (globalPercent) globalPercent.textContent = percent + "%";
+    if (missingCount) missingCount.textContent = missing;
+    if (progressBar) progressBar.style.width = percent + "%";
 
-    document.getElementById("progressBar").style.width = percent + "%";
+    const statsTotal = document.getElementById("statsTotal");
+    const statsPercent = document.getElementById("statsPercent");
+
+    if (statsTotal) statsTotal.textContent = `${owned} / ${total}`;
+    if (statsPercent) statsPercent.textContent = percent + "%";
+
+    if (percent === 100) {
+        setTimeout(() => alert("🏆 ¡Colección completada al 100%!"), 300);
+    }
 }
 
-// CHECKBOX SAVE
-packets.forEach((p, i) => {
-    const saved = localStorage.getItem("packet_" + i);
-    if (saved === "true") p.checked = true;
+// PROGRESO POR MUNDIAL
+function calculateWorldCupProgress() {
+    document.querySelectorAll(".page").forEach(section => {
+        const localPackets = section.querySelectorAll(".packet");
+        if (!localPackets.length) return;
 
-    p.addEventListener("change", () => {
-        localStorage.setItem("packet_" + i, p.checked);
-        updateStats();
+        let owned = 0;
+
+        localPackets.forEach(p => {
+            if (p.checked) owned++;
+        });
+
+        let progress = section.querySelector(".worldcup-progress");
+
+        if (!progress) {
+            progress = document.createElement("p");
+            progress.className = "worldcup-progress";
+
+            const title = section.querySelector("h1");
+            if (title) title.insertAdjacentElement("afterend", progress);
+        }
+
+        progress.textContent = `${owned}/${localPackets.length} sobres`;
     });
-});
+}
 
-// NAV INIT FIX
-window.addEventListener("DOMContentLoaded", () => {
-    pages.forEach(p => p.classList.remove("active"));
-    document.getElementById("inicio").classList.add("active");
+// INICIO
+function refreshAll() {
     updateStats();
-});
+    calculateWorldCupProgress();
+}
+
+refreshAll();
