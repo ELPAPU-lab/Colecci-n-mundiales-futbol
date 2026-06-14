@@ -27,7 +27,9 @@ const packets = document.querySelectorAll(".packet");
 
 packets.forEach((packet, index) => {
 
-    const saved = localStorage.getItem("packet_" + index);
+    const saved = localStorage.getItem(
+        "packet_" + index
+    );
 
     if(saved === "true"){
         packet.checked = true;
@@ -62,6 +64,8 @@ function updateStats(){
 
     });
 
+    const missing = total - owned;
+
     const percent =
         total > 0
         ? Math.round((owned / total) * 100)
@@ -83,6 +87,14 @@ function updateStats(){
     if(globalPercent){
         globalPercent.textContent =
             percent + "%";
+    }
+
+    const missingCount =
+        document.getElementById("missingCount");
+
+    if(missingCount){
+        missingCount.textContent =
+            missing;
     }
 
     const progressBar =
@@ -111,17 +123,22 @@ function updateStats(){
             percent + "%";
     }
 
-    // Logros
-
     checkAchievements(percent);
 
 }
 
 // LOGROS
 
+let completedAlertShown = false;
+
 function checkAchievements(percent){
 
-    if(percent === 100){
+    if(
+        percent === 100 &&
+        !completedAlertShown
+    ){
+
+        completedAlertShown = true;
 
         setTimeout(() => {
 
@@ -135,40 +152,125 @@ function checkAchievements(percent){
 
 }
 
-// BUSCADOR AUTOMÁTICO (si luego agregas uno)
+// BUSCADOR
 
-function searchPackets(text){
+const searchInput =
+document.getElementById("searchInput");
 
-    const cards =
-        document.querySelectorAll(".packet-card");
+if(searchInput){
 
-    cards.forEach(card => {
+    searchInput.addEventListener(
+        "input",
+        e => {
 
-        const name =
-            card.innerText.toLowerCase();
+            const text =
+                e.target.value.toLowerCase();
 
-        if(
-            name.includes(
-                text.toLowerCase()
-            )
-        ){
+            const cards =
+                document.querySelectorAll(
+                    ".packet-card"
+                );
 
-            card.style.display = "block";
+            cards.forEach(card => {
 
-        }else{
+                const name =
+                    card.innerText.toLowerCase();
 
-            card.style.display = "none";
+                if(
+                    name.includes(text)
+                ){
+
+                    card.style.display =
+                        "block";
+
+                }else{
+
+                    card.style.display =
+                        "none";
+
+                }
+
+            });
 
         }
+    );
+
+}
+
+// PROGRESO POR MUNDIAL
+
+function calculateWorldCupProgress(){
+
+    const sections =
+        document.querySelectorAll(
+            ".page"
+        );
+
+    sections.forEach(section => {
+
+        const localPackets =
+            section.querySelectorAll(
+                ".packet"
+            );
+
+        if(
+            localPackets.length === 0
+        ) return;
+
+        let owned = 0;
+
+        localPackets.forEach(packet => {
+
+            if(packet.checked){
+                owned++;
+            }
+
+        });
+
+        let progress =
+            section.querySelector(
+                ".worldcup-progress"
+            );
+
+        if(!progress){
+
+            progress =
+            document.createElement("p");
+
+            progress.className =
+            "worldcup-progress";
+
+            const title =
+            section.querySelector("h1");
+
+            title.insertAdjacentElement(
+                "afterend",
+                progress
+            );
+
+        }
+
+        progress.textContent =
+            `${owned}/${localPackets.length} sobres`;
 
     });
 
 }
 
+// ACTUALIZAR TODO
+
+function refreshAll(){
+
+    updateStats();
+
+    calculateWorldCupProgress();
+
+}
+
 // INICIO
 
-updateStats();
+refreshAll();
 
 console.log(
-    "Colección Mundialista cargada correctamente."
+"🏆 Colección Mundialista cargada correctamente."
 );
