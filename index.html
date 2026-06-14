@@ -1,190 +1,256 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colección de Sobres Mundialistas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección Mundialista Panini</title>
 
-<style>
-body{
-    font-family:Arial,sans-serif;
-    margin:0;
-    background:#111;
-    color:white;
-}
-
-header{
-    background:#1e88e5;
-    padding:15px;
-    text-align:center;
-    font-size:24px;
-    font-weight:bold;
-}
-
-#contador{
-    text-align:center;
-    padding:10px;
-    font-size:20px;
-}
-
-.menu{
-    display:flex;
-    overflow-x:auto;
-    background:#222;
-}
-
-.menu button{
-    flex:none;
-    padding:12px;
-    border:none;
-    background:#333;
-    color:white;
-    cursor:pointer;
-}
-
-.menu button:hover{
-    background:#555;
-}
-
-.seccion{
-    display:none;
-    padding:15px;
-}
-
-.activa{
-    display:block;
-}
-
-.sobre{
-    background:#222;
-    border-radius:10px;
-    padding:10px;
-    margin-bottom:10px;
-}
-
-.sobre img{
-    width:100%;
-    max-width:250px;
-    border-radius:10px;
-    display:block;
-    margin:auto;
-}
-
-.check{
-    margin-top:10px;
-    font-size:18px;
-}
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>Colección de Sobres Mundialistas</header>
+<div class="sidebar">
 
-<div id="contador">
-Sobres conseguidos: <span id="total">0</span>
+    <div class="logo">
+        🏆
+        <h2>Mundiales</h2>
+    </div>
+
+    <nav>
+
+        <button class="menu-btn" data-section="inicio">Inicio</button>
+
+        <button class="menu-btn" data-section="m1970">🇲🇽 1970</button>
+        <button class="menu-btn" data-section="m1974">🇩🇪 1974</button>
+        <button class="menu-btn" data-section="m1978">🇦🇷 1978</button>
+        <button class="menu-btn" data-section="m1982">🇪🇸 1982</button>
+        <button class="menu-btn" data-section="m1986">🇲🇽 1986</button>
+        <button class="menu-btn" data-section="m1990">🇮🇹 1990</button>
+        <button class="menu-btn" data-section="m1994">🇺🇸 1994</button>
+        <button class="menu-btn" data-section="m1998">🇫🇷 1998</button>
+        <button class="menu-btn" data-section="m2002">🇰🇷🇯🇵 2002</button>
+        <button class="menu-btn" data-section="m2006">🇩🇪 2006</button>
+        <button class="menu-btn" data-section="m2010">🇿🇦 2010</button>
+        <button class="menu-btn" data-section="m2014">🇧🇷 2014</button>
+        <button class="menu-btn" data-section="m2018">🇷🇺 2018</button>
+        <button class="menu-btn" data-section="m2022">🇶🇦 2022</button>
+        <button class="menu-btn" data-section="m2026">🌎 2026</button>
+
+        <button class="menu-btn" data-section="roadto">
+            🛣 Road To
+        </button>
+
+        <button class="menu-btn" data-section="estadisticas">
+            📊 Estadísticas
+        </button>
+
+    </nav>
+
 </div>
 
-<div class="menu">
-<button onclick="mostrar('m1970')">1970</button>
-<button onclick="mostrar('m1974')">1974</button>
-<button onclick="mostrar('m1978')">1978</button>
-<button onclick="mostrar('m1982')">1982</button>
-<button onclick="mostrar('m1986')">1986</button>
-<button onclick="mostrar('m1990')">1990</button>
-<button onclick="mostrar('m1994')">1994</button>
-<button onclick="mostrar('m1998')">1998</button>
-<button onclick="mostrar('m2002')">2002</button>
-<button onclick="mostrar('m2006')">2006</button>
-<button onclick="mostrar('m2010')">2010</button>
-<button onclick="mostrar('m2014')">2014</button>
-<button onclick="mostrar('m2018')">2018</button>
-<button onclick="mostrar('m2022')">2022</button>
-<button onclick="mostrar('m2026')">2026</button>
-</div>
+<main>
 
-<div id="m1970" class="seccion activa">
-<h2>México 1970</h2>
+<section id="inicio" class="page active">
 
-<div class="sobre">
-<img src="https://via.placeholder.com/250x350?text=Mexico+70">
-<p>México 70</p>
-<label class="check">
-<input type="checkbox" class="sobres"> Lo tengo
+    <h1>🏆 Colección Mundialista Panini</h1>
+
+    <div class="dashboard">
+
+        <div class="stat-card">
+            <h3>Sobres conseguidos</h3>
+            <p id="globalCount">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Porcentaje</h3>
+            <p id="globalPercent">0%</p>
+        </div>
+
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+</section>
+
+<section id="m1970" class="page">
+<h1>México 1970</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+<img src="images/mexico70.jpg" alt="">
+<h3>México 70</h3>
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
 </label>
 </div>
+
 </div>
+</section>
 
-<div id="m1974" class="seccion">
-<h2>Alemania 1974</h2>
+<section id="m1974" class="page">
+<h1>Alemania 1974</h1>
 
-<div class="sobre">
-<img src="https://via.placeholder.com/250x350?text=Munich+74">
-<p>Munich 74</p>
-<label class="check">
-<input type="checkbox" class="sobres"> Lo tengo
+<div class="card-grid">
+
+<div class="packet-card">
+<img src="images/munich74.jpg" alt="">
+<h3>Munich 74</h3>
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
 </label>
 </div>
+
 </div>
+</section>
 
-<div id="m1978" class="seccion">
-<h2>Argentina 1978</h2>
+<section id="m1978" class="page">
+<h1>Argentina 1978</h1>
 
-<div class="sobre">
-<img src="https://via.placeholder.com/250x350?text=Argentina+78">
-<p>Argentina 78</p>
-<label class="check">
-<input type="checkbox" class="sobres"> Lo tengo
+<div class="card-grid">
+
+<div class="packet-card">
+<img src="images/argentina78.jpg" alt="">
+<h3>Argentina 78</h3>
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
 </label>
 </div>
+
+</div>
+</section>
+
+<section id="m1982" class="page">
+<h1>España 1982</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+<img src="images/espana82.jpg" alt="">
+<h3>España 82</h3>
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
+</label>
 </div>
 
-<div id="m1982" class="seccion"><h2>España 82</h2></div>
-<div id="m1986" class="seccion"><h2>México 86</h2></div>
-<div id="m1990" class="seccion"><h2>Italia 90</h2></div>
-<div id="m1994" class="seccion"><h2>USA 94</h2></div>
-<div id="m1998" class="seccion"><h2>France 98</h2></div>
-<div id="m2002" class="seccion"><h2>Korea/Japan 2002</h2></div>
-<div id="m2006" class="seccion"><h2>Germany 2006</h2></div>
-<div id="m2010" class="seccion"><h2>South Africa 2010</h2></div>
-<div id="m2014" class="seccion"><h2>Brazil 2014</h2></div>
-<div id="m2018" class="seccion"><h2>Russia 2018</h2></div>
-<div id="m2022" class="seccion"><h2>Qatar 2022</h2></div>
-<div id="m2026" class="seccion"><h2>World Cup 2026</h2></div>
+</div>
+</section>
 
-<script>
-function mostrar(id){
-    document.querySelectorAll('.seccion')
-    .forEach(s=>s.classList.remove('activa'));
+<section id="m1986" class="page"><h1>México 1986</h1></section>
+<section id="m1990" class="page"><h1>Italia 1990</h1></section>
+<section id="m1994" class="page"><h1>USA 1994</h1></section>
+<section id="m1998" class="page"><h1>France 1998</h1></section>
+<section id="m2002" class="page"><h1>Korea / Japan 2002</h1></section>
+<section id="m2006" class="page"><h1>Germany 2006</h1></section>
 
-    document.getElementById(id)
-    .classList.add('activa');
-}
+<section id="m2010" class="page">
+<h1>South Africa 2010</h1>
+</section>
 
-const checks=document.querySelectorAll('.sobres');
+<section id="m2014" class="page">
 
-checks.forEach((c,i)=>{
-    c.checked=localStorage.getItem('sobre'+i)==='true';
+<h1>Brazil 2014</h1>
 
-    c.addEventListener('change',()=>{
-        localStorage.setItem('sobre'+i,c.checked);
-        actualizar();
-    });
-});
+<div class="card-grid">
 
-function actualizar(){
-    let total=0;
+<div class="packet-card">
+<img src="images/brazil2014.jpg">
+<h3>Internacional</h3>
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
+</label>
+</div>
 
-    document.querySelectorAll('.sobres')
-    .forEach(c=>{
-        if(c.checked) total++;
-    });
+<div class="packet-card">
+<img src="images/brazil2014usa.jpg">
+<h3>USA Edition</h3>
+<label>
+<input type="checkbox" class="packet">
+✓ Lo tengo
+</label>
+</div>
 
-    document.getElementById('total').textContent=total;
-}
+</div>
 
-actualizar();
-</script>
+</section>
+
+<section id="m2018" class="page">
+<h1>Russia 2018</h1>
+</section>
+
+<section id="m2022" class="page">
+<h1>Qatar 2022</h1>
+</section>
+
+<section id="m2026" class="page">
+<h1>World Cup 2026</h1>
+</section>
+
+<section id="roadto" class="page">
+
+<h1>Road To World Cup</h1>
+
+<div class="card-grid">
+
+<div class="packet-card">
+<h3>Road To 2002</h3>
+<input type="checkbox" class="packet">
+</div>
+
+<div class="packet-card">
+<h3>Road To 2014</h3>
+<input type="checkbox" class="packet">
+</div>
+
+<div class="packet-card">
+<h3>Road To 2018</h3>
+<input type="checkbox" class="packet">
+</div>
+
+<div class="packet-card">
+<h3>Road To 2022</h3>
+<input type="checkbox" class="packet">
+</div>
+
+<div class="packet-card">
+<h3>Road To 2026</h3>
+<input type="checkbox" class="packet">
+</div>
+
+</div>
+
+</section>
+
+<section id="estadisticas" class="page">
+
+<h1>📊 Estadísticas</h1>
+
+<div class="dashboard">
+
+<div class="stat-card">
+<h3>Total Conseguidos</h3>
+<p id="statsTotal">0</p>
+</div>
+
+<div class="stat-card">
+<h3>Completado</h3>
+<p id="statsPercent">0%</p>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
 
 </body>
-  </html>
+    </html>
