@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colección de Sobres Mundialistas</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#111;
+    color:white;
+}
+
+header{
+    background:#1e88e5;
+    padding:15px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+}
+
+#contador{
+    text-align:center;
+    padding:10px;
+    font-size:20px;
+}
+
+.menu{
+    display:flex;
+    overflow-x:auto;
+    background:#222;
+}
+
+.menu button{
+    flex:none;
+    padding:12px;
+    border:none;
+    background:#333;
+    color:white;
+    cursor:pointer;
+}
+
+.menu button:hover{
+    background:#555;
+}
+
+.seccion{
+    display:none;
+    padding:15px;
+}
+
+.activa{
+    display:block;
+}
+
+.sobre{
+    background:#222;
+    border-radius:10px;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+.sobre img{
+    width:100%;
+    max-width:250px;
+    border-radius:10px;
+    display:block;
+    margin:auto;
+}
+
+.check{
+    margin-top:10px;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<header>Colección de Sobres Mundialistas</header>
+
+<div id="contador">
+Sobres conseguidos: <span id="total">0</span>
+</div>
+
+<div class="menu">
+<button onclick="mostrar('m1970')">1970</button>
+<button onclick="mostrar('m1974')">1974</button>
+<button onclick="mostrar('m1978')">1978</button>
+<button onclick="mostrar('m1982')">1982</button>
+<button onclick="mostrar('m1986')">1986</button>
+<button onclick="mostrar('m1990')">1990</button>
+<button onclick="mostrar('m1994')">1994</button>
+<button onclick="mostrar('m1998')">1998</button>
+<button onclick="mostrar('m2002')">2002</button>
+<button onclick="mostrar('m2006')">2006</button>
+<button onclick="mostrar('m2010')">2010</button>
+<button onclick="mostrar('m2014')">2014</button>
+<button onclick="mostrar('m2018')">2018</button>
+<button onclick="mostrar('m2022')">2022</button>
+<button onclick="mostrar('m2026')">2026</button>
+</div>
+
+<div id="m1970" class="seccion activa">
+<h2>México 1970</h2>
+
+<div class="sobre">
+<img src="https://via.placeholder.com/250x350?text=Mexico+70">
+<p>México 70</p>
+<label class="check">
+<input type="checkbox" class="sobres"> Lo tengo
+</label>
+</div>
+</div>
+
+<div id="m1974" class="seccion">
+<h2>Alemania 1974</h2>
+
+<div class="sobre">
+<img src="https://via.placeholder.com/250x350?text=Munich+74">
+<p>Munich 74</p>
+<label class="check">
+<input type="checkbox" class="sobres"> Lo tengo
+</label>
+</div>
+</div>
+
+<div id="m1978" class="seccion">
+<h2>Argentina 1978</h2>
+
+<div class="sobre">
+<img src="https://via.placeholder.com/250x350?text=Argentina+78">
+<p>Argentina 78</p>
+<label class="check">
+<input type="checkbox" class="sobres"> Lo tengo
+</label>
+</div>
+</div>
+
+<div id="m1982" class="seccion"><h2>España 82</h2></div>
+<div id="m1986" class="seccion"><h2>México 86</h2></div>
+<div id="m1990" class="seccion"><h2>Italia 90</h2></div>
+<div id="m1994" class="seccion"><h2>USA 94</h2></div>
+<div id="m1998" class="seccion"><h2>France 98</h2></div>
+<div id="m2002" class="seccion"><h2>Korea/Japan 2002</h2></div>
+<div id="m2006" class="seccion"><h2>Germany 2006</h2></div>
+<div id="m2010" class="seccion"><h2>South Africa 2010</h2></div>
+<div id="m2014" class="seccion"><h2>Brazil 2014</h2></div>
+<div id="m2018" class="seccion"><h2>Russia 2018</h2></div>
+<div id="m2022" class="seccion"><h2>Qatar 2022</h2></div>
+<div id="m2026" class="seccion"><h2>World Cup 2026</h2></div>
+
+<script>
+function mostrar(id){
+    document.querySelectorAll('.seccion')
+    .forEach(s=>s.classList.remove('activa'));
+
+    document.getElementById(id)
+    .classList.add('activa');
+}
+
+const checks=document.querySelectorAll('.sobres');
+
+checks.forEach((c,i)=>{
+    c.checked=localStorage.getItem('sobre'+i)==='true';
+
+    c.addEventListener('change',()=>{
+        localStorage.setItem('sobre'+i,c.checked);
+        actualizar();
+    });
+});
+
+function actualizar(){
+    let total=0;
+
+    document.querySelectorAll('.sobres')
+    .forEach(c=>{
+        if(c.checked) total++;
+    });
+
+    document.getElementById('total').textContent=total;
+}
+
+actualizar();
+</script>
+
+</body>
+</html>
