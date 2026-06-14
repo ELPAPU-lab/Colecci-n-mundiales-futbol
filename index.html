@@ -4,125 +4,205 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Colección Mundialista Panini</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="sidebar">
-<div class="logo">🏆⚽🌎<h2>Mundiales</h2></div>
+
+<div class="logo">
+🏆⚽🌎
+<h2>Mundiales</h2>
+</div>
 
 <nav>
 <button class="menu-btn" data-section="inicio">🏠 Inicio</button>
-<button class="menu-btn" data-section="m1970">1970</button>
-<button class="menu-btn" data-section="m1974">1974</button>
-<button class="menu-btn" data-section="m1978">1978</button>
-<button class="menu-btn" data-section="m1982">1982</button>
-<button class="menu-btn" data-section="m1986">1986</button>
-<button class="menu-btn" data-section="m1990">1990</button>
-<button class="menu-btn" data-section="m1994">1994</button>
-<button class="menu-btn" data-section="m1998">1998</button>
-<button class="menu-btn" data-section="m2002">2002</button>
-<button class="menu-btn" data-section="m2006">2006</button>
-<button class="menu-btn" data-section="m2010">2010</button>
-<button class="menu-btn" data-section="m2014">2014</button>
-<button class="menu-btn" data-section="m2018">2018</button>
-<button class="menu-btn" data-section="m2022">2022</button>
-<button class="menu-btn" data-section="m2026">2026</button>
+
+<button class="menu-btn" data-section="m1970">🇲🇽 1970</button>
+<button class="menu-btn" data-section="m1974">🇩🇪 1974</button>
+<button class="menu-btn" data-section="m1978">🇦🇷 1978</button>
+<button class="menu-btn" data-section="m1982">🇪🇸 1982</button>
+<button class="menu-btn" data-section="m1986">🇲🇽 1986</button>
+<button class="menu-btn" data-section="m1990">🇮🇹 1990</button>
+<button class="menu-btn" data-section="m1994">🇺🇸 1994</button>
+<button class="menu-btn" data-section="m1998">🇫🇷 1998</button>
+<button class="menu-btn" data-section="m2002">🇰🇷🇯🇵 2002</button>
+<button class="menu-btn" data-section="m2006">🇩🇪 2006</button>
+<button class="menu-btn" data-section="m2010">🇿🇦 2010</button>
+<button class="menu-btn" data-section="m2014">🇧🇷 2014</button>
+<button class="menu-btn" data-section="m2018">🇷🇺 2018</button>
+<button class="menu-btn" data-section="m2022">🇶🇦 2022</button>
+<button class="menu-btn" data-section="m2026">🌎 2026</button>
+
+<button class="menu-btn" data-section="roadto">🛣 Road To</button>
+<button class="menu-btn" data-section="estadisticas">📊 Estadísticas</button>
 </nav>
+
 </div>
 
 <main>
 
+<!-- INICIO -->
 <section id="inicio" class="page active">
-<h1>🏆 Colección Mundialista</h1>
+
+<div class="hero">
+<h1>🏆 Colección Mundialista Panini</h1>
+<p>Sobres oficiales y variantes de los Mundiales de Fútbol</p>
+</div>
 
 <div class="dashboard">
-<div class="stat-card"><h3>Conseguidos</h3><p id="globalCount">0</p></div>
-<div class="stat-card"><h3>Completado</h3><p id="globalPercent">0%</p></div>
-<div class="stat-card"><h3>Faltantes</h3><p id="missingCount">0</p></div>
+
+<div class="stat-card">
+<h3>🏆 Conseguidos</h3>
+<p id="globalCount">0</p>
+</div>
+
+<div class="stat-card">
+<h3>📊 Completado</h3>
+<p id="globalPercent">0%</p>
+</div>
+
+<div class="stat-card">
+<h3>❌ Faltantes</h3>
+<p id="missingCount">0</p>
+</div>
+
 </div>
 
 <div class="progress-container">
 <div class="progress-bar" id="progressBar"></div>
 </div>
+
 </section>
 
-<section id="m1970" class="page">
-<h1>1970</h1>
+<!-- EJEMPLO 1970 -->
+<section id="m1970" class="page active">
+
+<h1>🇲🇽 México 1970</h1>
+
 <div class="card-grid">
+
 <div class="packet-card">
 <img src="images/mexico70.jpg">
-<h3>Sobre normal</h3>
-<label><input type="checkbox" class="packet"> Lo tengo</label>
+<h3>Sobre Normal</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
 </div>
+
 </div>
+
 </section>
 
-<section id="m1974" class="page"><h1>1974</h1></section>
-<section id="m1978" class="page"><h1>1978</h1></section>
-<section id="m1982" class="page"><h1>1982</h1></section>
-<section id="m1986" class="page"><h1>1986</h1></section>
-<section id="m1990" class="page"><h1>1990</h1></section>
-<section id="m1994" class="page"><h1>1994</h1></section>
-<section id="m1998" class="page"><h1>1998</h1></section>
-
+<!-- 2002 -->
 <section id="m2002" class="page">
-<h1>2002</h1>
+<h1>🇰🇷🇯🇵 Korea Japón 2002</h1>
+
 <div class="card-grid">
+
 <div class="packet-card">
 <img src="images/korea2002.jpg">
-<h3>Sobre normal</h3>
-<label><input type="checkbox" class="packet"> Lo tengo</label>
+<h3>Sobre Normal</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
 </div>
+
 </div>
 </section>
 
-<section id="m2006" class="page"><h1>2006</h1></section>
-<section id="m2010" class="page"><h1>2010</h1></section>
-<section id="m2014" class="page"><h1>2014</h1></section>
-<section id="m2018" class="page"><h1>2018</h1></section>
-<section id="m2022" class="page"><h1>2022</h1></section>
-
-<section id="m2026" class="page">
-<h1>2026</h1>
+<!-- 2022 -->
+<section id="m2022" class="page">
+<h1>🇶🇦 Qatar 2022</h1>
 
 <div class="card-grid">
+
+<div class="packet-card">
+<img src="images/qatar2022.jpg">
+<h3>Sobre Normal</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/qatar2022cocacola.jpg">
+<h3>Coca-Cola (variante)</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+<div class="packet-card">
+<img src="images/qatar2022amazon.jpg">
+<h3>Amazon (variante)</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
+</div>
+
+</div>
+</section>
+
+<!-- 2026 -->
+<section id="m2026" class="page">
+
+<h1>🌎 World Cup 2026</h1>
+
+<div class="card-grid">
+
 <div class="packet-card">
 <img src="images/wc2026normal.jpg">
-<h3>Sobre normal</h3>
-<label><input type="checkbox" class="packet"> Lo tengo</label>
-</div>
+<h3>Sobre Normal</h3>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
 </div>
 
-<h2>Variantes</h2>
+</div>
+
+<h2>Variantes 2026</h2>
 
 <div class="card-grid">
+
 <div class="packet-card">
 <img src="images/wc2026gold.jpg">
 <h3>Preventa USA Gold</h3>
-<label><input type="checkbox" class="packet"> Lo tengo</label>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
 </div>
 
 <div class="packet-card">
 <img src="images/wc2026usa.jpg">
 <h3>USA Version</h3>
-<label><input type="checkbox" class="packet"> Lo tengo</label>
+<label><input type="checkbox" class="packet"> ✓ Lo tengo</label>
 </div>
+
 </div>
+
 </section>
 
+<!-- ESTADÍSTICAS -->
 <section id="estadisticas" class="page">
+
 <h1>📊 Estadísticas</h1>
 
 <div class="dashboard">
-<div class="stat-card"><h3>Total</h3><p id="statsTotal">0</p></div>
-<div class="stat-card"><h3>%</h3><p id="statsPercent">0%</p></div>
+
+<div class="stat-card">
+<h3>Total Conseguidos</h3>
+<p id="statsTotal">0</p>
 </div>
+
+<div class="stat-card">
+<h3>Completado</h3>
+<p id="statsPercent">0%</p>
+</div>
+
+</div>
+
 </section>
 
 </main>
 
 <script src="script.js"></script>
+
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+    if (typeof updateStats === "function") {
+        updateStats();
+    }
+});
+</script>
+
 </body>
 </html>
